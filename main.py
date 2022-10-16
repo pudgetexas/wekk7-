@@ -21,19 +21,12 @@ def about():
 
 @app.get("/text",response_class=PlainTextResponse)
 def text():
-    data = "Daniyar"
+    data = "Nurzhanr"
     # PlainTextResponse
     return Response(content=data,media_type="text/plain")
 
 @app.get("/html",response_class=FileResponse)
 def root_html():
-    # The default browser tries to interpret and display all the files it can, such as text files, image
-    # files, some other multimedia files. If the file cannot be interpreted by the browser, then it is
-    # downloaded. However, it may be necessary to automatically load without displaying some
-    # interpreted files, for example, the same html files. In this case, we can set the
-    # parametermedia_typeapplication/octet-stream value. In addition, using the filename parameter for
-    # the uploaded file, you can specify a name:
-    # return "index.html"
     return FileResponse("for the 1-11 index/index.html", filename="for the 1-11 index/index.html", media_type="application/octet-stream")
 
 @app.get("/users/{name}/{age}")
